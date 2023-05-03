@@ -5,17 +5,22 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'lua_ls',
+  'eslint',
+  'html',
 })
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
+--Turn on when debugging into logs is needed
+--vim.lsp.set_log_level("debug")
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<A-k>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<A-j>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
