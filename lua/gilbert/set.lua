@@ -27,3 +27,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+--change color of line numbers
+vim.cmd('hi LineNr guifg=#ffffff')
+
