@@ -56,4 +56,5 @@ return require('packer').startup(function(use)
 
   use('windwp/nvim-ts-autotag')
   use('RRethy/vim-illuminate')
+  use('jose-elias-alvarez/null-ls.nvim')
 end)
