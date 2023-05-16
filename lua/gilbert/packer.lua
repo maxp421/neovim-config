@@ -57,4 +57,20 @@ return require('packer').startup(function(use)
   use('windwp/nvim-ts-autotag')
   use('RRethy/vim-illuminate')
   use('jose-elias-alvarez/null-ls.nvim')
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  })
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 end)
